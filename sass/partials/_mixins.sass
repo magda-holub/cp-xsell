@@ -1,0 +1,70 @@
+@mixin flexOr
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+
+@mixin flexVert
+    display: flex
+    flex-direction: column
+
+@mixin container($top, $right, $bottom, $left)
+    padding-top: $top + px
+    padding-right: $right + px
+    padding-bottom: $bottom + px
+    padding-left: $left + px
+
+@mixin btnStates($color)
+    &:hover
+        background-color: darken($color, 6%)
+        box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.3)
+    &:active
+        background-color: darken($color, 12%)
+        box-shadow: none
+    &__disabled
+        background-color: transparentize($color, .5)
+        box-shadow: none
+
+@mixin btnAppearance($height, $size)
+    border-radius: 4px
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15)
+    height: $height + px
+    line-height: $height + px
+    font-size: $size + px
+    text-align: center
+    text-decoration: none
+    font-weight: 500
+    border: none
+    padding: 12px 24px
+    transition: all 300ms ease-in-out
+    cursor: pointer
+
+@mixin grad($direction, $color)
+    background: linear-gradient($direction, $color 0%, lighten($color, 12%) 100%)
+
+@mixin roboto
+    font-family: 'Roboto', sans-serif
+
+@mixin type($size, $level, $weight)
+    font-size: $size + px
+    line-height: $size * $level + px
+    font-weight: $weight
+
+@mixin imgretina($image, $type)
+    
+@mixin imgRetina($image, $type)
+    @media screen and (-webkit-min-device-pixel-ratio: 2)
+    
+        screen and (min--moz-device-pixel-ratio: 2)
+    
+        screen and (-moz-min-device-pixel-ratio: 2)
+    
+        screen and (-o-min-device-pixel-ratio: 2/1)
+    
+        screen and (min-device-pixel-ratio: 2)
+    
+        screen and (min-resolution: 192dpi)
+    
+        screen and (min-resolution: 2dppx)
+    
+            background-image: url($image + '@2x' + $type)
+      
